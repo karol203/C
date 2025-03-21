@@ -4,6 +4,7 @@
 main()
 {
     printf("celciusze i farencjusze");
+    printf("Test Repo");
     int fahr, celsius;
     int lower, upper, step;
     lower = 0;

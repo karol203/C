@@ -3,6 +3,7 @@
 
 main()
 {
+    printf("celciusze i farencjusze");
     int fahr, celsius;
     int lower, upper, step;
     lower = 0;

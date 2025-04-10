@@ -106,12 +106,19 @@ void zad6a(unsigned int n, int* tab1, int* tab2){
 }
 void zad6b(unsigned int n, int* tab1, int* tab2){
     int i;
-    int j;
     for(i=0; i<n; i++)
     {
         tab2[n-1-i]=tab1[i];
     }
     wypisz(n, tab2);
+}
+void zad7a(unsigned int n, int* tab1, int* tab2, int* tab3){
+    int i;
+    for(i=0; i<n; i++)
+    {
+        tab3[i] = tab1[i] + tab2[i];
+    }
+    wypisz(n, tab3);
 }
 int main()
 {
@@ -168,12 +175,19 @@ int main()
     int tab1[] = {3,4,5,6};
     int tab2[] = {1,2,3,4};
     zad6a(n, tab1, tab2);
-    */
+
     /// ZADANIE 4.2.6B
     int n = 4;
     int tab1[] = {3,4,5,6};
     int tab2[] = {1,2,3,4};
     zad6b(n,tab1,tab2);
+    */
+    /// ZADANIE 4.2.7A
+    int n = 4;
+    int tab1[] = {3,4,5,6};
+    int tab2[] = {1,2,3,4};
+    int tab3[] = {5};
+    zad7a(n, tab1, tab2, tab3);
     return 0;
 }
 

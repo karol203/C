@@ -10,6 +10,15 @@ void wypisz(unsigned int n, int* tab){
     }
     printf("\n");
 }
+void wypiszd(unsigned int n, double* tab){
+    int i;
+    for(i=0;i<n;i++)
+    {
+        printf("%f\t",tab[i]);
+
+    }
+    printf("\n");
+}
 void zero(unsigned int n, int* tab){
     int i;
     for(i=0; i<n; i++)
@@ -120,6 +129,64 @@ void zad7a(unsigned int n, int* tab1, int* tab2, int* tab3){
     }
     wypisz(n, tab3);
 }
+void zad7b(unsigned int n, int* tab1, int* tab2, int* tab3){
+    int i;
+    for(i=0; i<n; i++)
+    {
+        if(tab1[i]>tab2[i])
+        {
+            tab3[i]=tab1[i];
+        }
+        else if(tab1[i]<tab2[i])
+        {
+            tab3[i]=tab2[i];
+        }
+        else
+        {
+            tab3[i]=tab1[i];
+        }
+    }
+    wypisz(n, tab3);
+}
+void zad7c(unsigned int n, int* tab1, int* tab2, int* tab3){
+    int i;
+    for(i=0; i<n; i++)
+    {
+        if(i%2==0)
+        {
+            tab3[i]=tab1[i];
+        }
+        else
+        {
+            tab3[i]=tab2[i];
+        }
+    }
+    wypisz(n, tab3);
+}
+void zad8a(unsigned int n, double* tab1, double* tab2, double* tab3){
+    int i;
+    for(i=0; i<n; i++)
+    {
+        tab3[i]=tab1[i];
+        tab3[i+n]=tab2[i];
+    }
+    wypiszd(8, tab3);
+}
+void zad8b(unsigned int n, double* tab1, double* tab2, double* tab3){
+    int i;
+    for(i=0; i<n; i++)
+    {
+        if(i%2==0)
+        {
+            tab3[i]=tab1[(i-1)/2];
+        }
+        else
+        {
+            tab3[i]=tab2[i/2];
+        }
+    }
+    wypiszd(8, tab3);
+}
 int main()
 {
     /*
@@ -181,13 +248,40 @@ int main()
     int tab1[] = {3,4,5,6};
     int tab2[] = {1,2,3,4};
     zad6b(n,tab1,tab2);
-    */
+
     /// ZADANIE 4.2.7A
     int n = 4;
     int tab1[] = {3,4,5,6};
     int tab2[] = {1,2,3,4};
     int tab3[] = {5};
     zad7a(n, tab1, tab2, tab3);
+
+    /// ZADANIE 4.2.7B
+    int n = 4;
+    int tab1[] = {3,4,5,6};
+    int tab2[] = {6,2,3,8};
+    int tab3[] = {5};
+    zad7b(n, tab1, tab2, tab3);
+
+    /// ZADANIE 4.2.7C
+    int n = 4;
+    int tab1[] = {3,4,5,6};
+    int tab2[] = {6,2,3,8};
+    int tab3[] = {5};
+    zad7c(n, tab1, tab2, tab3);
+
+    /// ZADANIE 4.2.8A
+    int n = 4;
+    double tab1[] = {3,4,5,6};
+    double tab2[] = {6,2,3,8};
+    double tab3[8];
+    zad8a(4, tab1, tab2, tab3);
+    */
+    /// ZADANIE 4.2.8B
+    int n = 4;
+    double tab1[] = {3,4,5,6};
+    double tab2[] = {6,2,3,8};
+    double tab3[8];
+    zad8b(4, tab1, tab2, tab3);
     return 0;
 }
-

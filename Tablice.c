@@ -276,6 +276,17 @@ int main()
     double tab2[] = {6,2,3,8};
     double tab3[8];
     zad8a(4, tab1, tab2, tab3);
+    
+    /// ZADANIE PROBNE
+    int tab[]={0,1,2,3,4,5,6,7};
+    int n = sizeof(tab) / sizeof(tab[0]);
+    for (int i = n-1; i>=0;i--)
+    {
+        if (i%2==0)
+        {
+            printf("%d\t", tab[i]);
+        }
+    }
     */
     /// ZADANIE 4.2.8B
     int n = 4;

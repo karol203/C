@@ -9,6 +9,10 @@ struct punkt
 {
     double x,y,z;
 };
+struct zespolone{
+double a;
+double b;
+};
 double obwod(struct trojkat t)
 {
     return t.a+t.b+t.c;
@@ -36,6 +40,69 @@ double minimum(struct punkt tab[], int n)
     }
     return min;
 }
+void wyswietl_liczbe_zespolona(struct zespolone liczba)
+{
+    printf("%f+%f i \n",liczba.a,liczba.b);
+}
+void wczytaj(struct zespolone liczba)
+{
+    scanf("%lf", &liczba.a);
+    scanf("%lf", &liczba.b);
+}
+double modul_liczby_zespolonej(struct zespolone liczba)
+{
+    return sqrt(pow(liczba.a,2)+pow(liczba.b,2));
+}
+struct zespolone dodaj(struct zespolone liczba1, struct zespolone liczba2)
+{
+    struct zespolone suma;
+    suma.a=liczba1.a+liczba2.a;
+    suma.b=liczba1.b+liczba2.b;
+    return suma;
+};
+struct element *utworz()
+{
+return NULL
+};
+void wyczysc(struct element* lista)
+{
+    struct element *wsk=lista;
+    while(lista!=NULL)
+    {
+        lista=lista->next;
+        free(wsk);
+        wsk=lista;
+    }
+}
+void element *dodajnapoczatek(struct element* lista,int a)
+{
+    struct element *wsk=malloc(sizeof(struct element));
+    wsk->i=a;
+    wsk->lista;
+    return wsk;
+}
+void element *dodajnakoniec(struct element* lista,int a)
+{
+    struct element *wsk;
+    if(lista==NULL)
+    {
+        lista=wsk=malloc(sizeof(struct element));
+    }
+    else
+    {
+        wsk=lista;
+        while(wsk->next!=NULL)
+    }
+}
+void wypisz(struct element * lista)
+{
+    while(lista!=NULL)
+    {
+        printf("%d\n",lista->i);
+        lista=lista->next;
+
+    }
+}
 int main()
 {
     ///zadanie1
@@ -61,7 +128,7 @@ int main()
     printf("%f %f %f\n",t2.a,t2.b,t2.c);
     void zamiana(t1,t2);
     printf("%f %f %f\n",t1.a,t1.b,t1.c);
-    */
+
     ///zadanie3
     struct punkt P;
     P.x=4;
@@ -77,4 +144,6 @@ int main()
     R.z=0;
     struct punkt tab[2] = (P,Q,R);
     printf("%f",minimum(tab,3));
+    */
+    ///
 }

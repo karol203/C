@@ -74,14 +74,14 @@ void wyczysc(struct element* lista)
         wsk=lista;
     }
 }
-void element *dodajnapoczatek(struct element* lista,int a)
+struct element *dodajnapoczatek(struct element* lista,int a)
 {
     struct element *wsk=malloc(sizeof(struct element));
     wsk->i=a;
     wsk->lista;
     return wsk;
-}
-void element *dodajnakoniec(struct element* lista,int a)
+};
+struct element *dodajnakoniec(struct element* lista,int a)
 {
     struct element *wsk;
     if(lista==NULL)
@@ -93,7 +93,7 @@ void element *dodajnakoniec(struct element* lista,int a)
         wsk=lista;
         while(wsk->next!=NULL)
     }
-}
+};
 void wypisz(struct element * lista)
 {
     while(lista!=NULL)
@@ -102,6 +102,104 @@ void wypisz(struct element * lista)
         lista=lista->next;
 
     }
+}
+struct dodajw(struct element* lista,struct element* elem,int a)
+{
+    struct element *wsk=malloc(sizeof(struct element));
+    wsk->i=a;
+    if(elem==NULL)
+    {
+        wsl->next=lista;
+        lista = wsk;
+    }
+    else
+    {
+        wsk->next=elem->next;
+        elem->next=wsk;
+    }
+    return lista;
+};
+struct element * znajdz(struct element * lista,int a)
+{
+    while((lista!=NULL)&&(lista->i!=a))
+    {
+        lista=lista->next;
+
+    }
+    return lista;
+};
+struct element *usun(struct element * lista,int a)
+{
+        struct element *wsk,*wsk2;
+        if(lista==NULL)
+        {
+            return lista;
+        }
+        wsk=lista;
+        if(lista->i==a)
+        {
+            lista=lista->next;
+            free(wsk);
+        }
+        while((wsk->next!=NULL)&&(wsk->next->i!=a))
+        {
+            wsk=wsk->next;
+        }
+        if(wsk->next!=NULL)
+        {
+            wsk2=wsk->next;
+            wsk->next=wsk2->next;
+            free(wsk2);
+        }
+        return lista;
+};
+struct usunw(struct element *lista,struct element * elem)
+{
+    struct element *wsk,*wsk2;
+    if(lista=NULL)
+    {
+        return lista;
+    }
+    wsk=lista;
+    if(lista==elem)
+    {
+        lista=lista->next;
+        free(wsk);
+        return lista;
+    }
+    while((wsk->next!=NULL)&&(wsk->next!=elem))
+    {
+        wsk=wsk->next;
+    }
+    if(wsk->next!=NULL)
+    {
+        wsk2=wsk->next;
+        wsk->next=wsk2->next;
+        free(wsk2);
+    }
+    return lista;
+};
+///    LISTY Z GŁOWĄ
+struct element *utworzglowa(){
+    struct element *wsk=malloc(sizeof(struct element));
+    wsk->next=NULL;
+    return wsk;
+}
+void wyczyscglowa(struct element *lista)
+{
+    struct element *wsk=lista->next;
+    lista=wsk;
+    while(lista!=NULL)
+    {
+        lista=lista->next;
+        free(wsk);
+        wsk=lista;
+    }
+}
+void dadajnapoczatekzglowa(struct element *lista,int a)
+{
+    struct element *wsk=malloc(sizeof(struct element));
+    wsk->i=a;
 }
 int main()
 {

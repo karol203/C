@@ -179,7 +179,7 @@ struct usunw(struct element *lista,struct element * elem)
     }
     return lista;
 };
-///    LISTY Z GŁOWĄ
+///    LISTY Z G£OW¥
 struct element *utworzglowa(){
     struct element *wsk=malloc(sizeof(struct element));
     wsk->next=NULL;
@@ -200,6 +200,63 @@ void dadajnapoczatekzglowa(struct element *lista,int a)
 {
     struct element *wsk=malloc(sizeof(struct element));
     wsk->i=a;
+}
+void usunzglowa(struct element * lista,int a)
+{
+    struct element * wsk;
+    while((lista->next!=NULL)&&(lista->next->i!=a))
+        lista=lista->next;
+    if(lista->next!=NULL)
+    {
+        wsk=lista->next;
+        lista->next=wsk->next;
+        free(wsk);
+    }
+}
+void zeruj(struct * lista)
+{
+    while(lista!=NULL)
+    {
+        lista->i=0;
+        lista=lista->next;
+    }
+}
+void bezw(struct *lista)
+{
+    while(lista!=NULL)
+    {
+        if(lista->i>0)
+        {
+            lista->i=lista->i;
+        }
+        else
+        {
+            lista->i=lista-i*-1;
+        }
+    }
+}
+int suma(struct element * lista)
+{
+    int sum=0;
+    while(lista!=NULL)
+    {
+        sum=sum+lista->i;
+        lista=lista->next;
+    }
+    return sum;
+}
+int minimum(struct element * lista)
+{
+    min=lista->i;
+    while(lista!=NULL)
+        {
+            if(lista->i<min)
+            {
+                min=lista->i
+            }
+            lista=lista->next;
+        }
+    return min;
 }
 int main()
 {
